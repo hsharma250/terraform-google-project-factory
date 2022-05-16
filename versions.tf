@@ -43,7 +43,7 @@ provider "google" {
     region      = "us-central1"
     zone        = "us-central1-c"
   }
-  provider "gsuite" {
+  provider "deviavir/gsuite" {
   oauth_scopes = [
     "https://www.googleapis.com/auth/admin.directory.group",
     "https://www.googleapis.com/auth/apps.groups.settings",

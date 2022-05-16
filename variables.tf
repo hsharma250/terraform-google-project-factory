@@ -35,6 +35,7 @@ variable "domain" {
 variable "name" {
   description = "The name for the project"
   type        = string
+  default     = "test"
 }
 
 variable "project_id" {

@@ -23,6 +23,7 @@ variable "random_project_id" {
 variable "org_id" {
   description = "The organization ID."
   type        = string
+  default     = "435160234064"
 }
 
 variable "domain" {
@@ -57,6 +58,7 @@ variable "enable_shared_vpc_host_project" {
 variable "billing_account" {
   description = "The ID of the billing account to associate this project with"
   type        = string
+  default     = "01346D-935252-68647E"
 }
 
 variable "folder_id" {

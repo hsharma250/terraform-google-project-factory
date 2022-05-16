@@ -16,14 +16,14 @@
 
 resource "google_folder" "workload" {
   display_name = "workload"
-  parent       = "organizations/${var.organization_id}"
+  parent       = "organizations/${var.org_id}"
 }
 
 module "project-prod" {
   source            = "./modules/gsuite_enabled"
   random_project_id = true
   name              = "hierarchy-sample-prod"
-  org_id            = var.organization_id
+  org_id            = var.org_id
   billing_account   = var.billing_account
   folder_id         = google_folder.workload.folder_id
 }
@@ -32,7 +32,7 @@ module "project-non-prod" {
   source            = "./modules/gsuite_enabled"
   random_project_id = true
   name              = "hierarchy-sample-non-prod"
-  org_id            = var.organization_id
+  org_id            = var.org_id
   billing_account   = var.billing_account
   folder_id         = google_folder.workload.folder_id
 }

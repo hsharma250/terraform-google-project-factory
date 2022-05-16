@@ -16,6 +16,10 @@
 
 terraform {
   required_version = ">=0.13.0"
+  backend "gcs" {
+    bucket = "tf-state-telenor"
+    prefix = "terraform/state"
+  }
   required_providers {
     google = {
       source  = "hashicorp/google"
@@ -34,12 +38,12 @@ terraform {
   }
 }
 provider "google" {
-    project = "test-project-350005"
-    region      = "us-central1"
-    zone        = "us-central1-c"
-  }
-  provider "google-beta" {
-    project = "test-project-350005"
-    region      = "us-central1"
-    zone        = "us-central1-c"
-  }
+  project = "test-project-350005"
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}
+provider "google-beta" {
+  project = "test-project-350005"
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}

@@ -26,7 +26,14 @@ terraform {
       version = "~> 4.11"
     }
   }
-  provider "google" {
+  provider_meta "google" {
+    module_name = "blueprints/terraform/terraform-google-project-factory/v13.0.0"
+  }
+  provider_meta "google-beta" {
+    module_name = "blueprints/terraform/terraform-google-project-factory/v13.0.0"
+  }
+}
+provider "google" {
     project = "test-project-350005"
     region      = "us-central1"
     zone        = "us-central1-c"
@@ -44,10 +51,3 @@ terraform {
     "https://www.googleapis.com/auth/admin.directory.userschema",
   ]
   }
-  provider_meta "google" {
-    module_name = "blueprints/terraform/terraform-google-project-factory/v13.0.0"
-  }
-  provider_meta "google-beta" {
-    module_name = "blueprints/terraform/terraform-google-project-factory/v13.0.0"
-  }
-}

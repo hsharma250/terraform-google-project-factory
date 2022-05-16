@@ -26,6 +26,24 @@ terraform {
       version = "~> 4.11"
     }
   }
+  provider "google" {
+    project = "test-project-350005"
+    region      = "us-central1"
+    zone        = "us-central1-c"
+  }
+  provider "google-beta" {
+    project = "test-project-350005"
+    region      = "us-central1"
+    zone        = "us-central1-c"
+  }
+  provider "gsuite" {
+  oauth_scopes = [
+    "https://www.googleapis.com/auth/admin.directory.group",
+    "https://www.googleapis.com/auth/apps.groups.settings",
+    "https://www.googleapis.com/auth/admin.directory.user",
+    "https://www.googleapis.com/auth/admin.directory.userschema",
+  ]
+  }
   provider_meta "google" {
     module_name = "blueprints/terraform/terraform-google-project-factory/v13.0.0"
   }

@@ -52,6 +52,8 @@ provider "google-beta" {
   zone    = "us-central1-c"
 }
 provider "gsuite" {
+  #impersonated_user_email = "hsharma@testharsh.joonix.net"
+  impersonated_user_email = "terraform-sa-demo@test-project-350005.iam.gserviceaccount.com"
   oauth_scopes = [
     "https://www.googleapis.com/auth/admin.directory.group",
     "https://www.googleapis.com/auth/apps.groups.settings",

@@ -25,6 +25,10 @@ terraform {
       source  = "hashicorp/google"
       version = "~> 4.11"
     }
+    gsuite = {
+      source  = "DeviaVir/gsuite"
+      version = "~> 0.1"
+    }
     google-beta = {
       source  = "hashicorp/google-beta"
       version = "~> 4.11"
@@ -46,4 +50,12 @@ provider "google-beta" {
   project = "test-project-350005"
   region  = "us-central1"
   zone    = "us-central1-c"
+}
+provider "gsuite" {
+  oauth_scopes = [
+    "https://www.googleapis.com/auth/admin.directory.group",
+    "https://www.googleapis.com/auth/apps.groups.settings",
+    "https://www.googleapis.com/auth/admin.directory.user",
+    "https://www.googleapis.com/auth/admin.directory.userschema",
+  ]
 }
